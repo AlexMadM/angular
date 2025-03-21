@@ -7,8 +7,18 @@
         <app-user [user]="user" (select)="onSelectUser($event)" />
       </li>
     }
-
+<!--    <li *ngFor="let user of users">-->
+<!--      <app-user [user]="user" (select)="onSelectUser($event)" />-->
+<!--    </li>-->
 
   </ul>
-  <app-tasks [name]="selectedUser?.name" />
+  @if (selectedUser) {
+    <app-tasks [name]="selectedUser.name" />
+  } @else {
+    <p>Select a user</p>
+  }
+<!--  <app-tasks *ngIf="selectedUser ;else fallback" [name]="selectedUser.name" />-->
+<!--  <ng-template #fallback>-->
+<!--    <p>Select a user</p>-->
+<!--  </ng-template>-->
 </main>
