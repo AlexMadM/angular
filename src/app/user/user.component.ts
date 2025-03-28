@@ -11,6 +11,7 @@ import {User} from "./user.model";
 })
 export class UserComponent {
   @Input({ required: true }) user!:User;
+  @Input({required:true}) selected!:boolean;
   // @Input({ required: true }) id!: string;
   // @Input({ required: true }) avatar!: string;
   // @Input({ required: true }) name!: string;
